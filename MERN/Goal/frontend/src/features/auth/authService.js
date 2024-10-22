@@ -21,14 +21,18 @@ const login = async (userData) => {
     return response.data
 }
 
-// Logout user : 
+// logout : 
 const logout = () => {
-    localStorage.removeItem('user')
+    const user = localStorage.getItem('user');
+    if (user) {
+        localStorage.removeItem('user');
+    }
 }
 
+
 const authService = {
-    register ,
-    logout ,
+    register,
+    logout,
     login
 }
 
